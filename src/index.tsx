@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 
-import { EmojiContextProvider, RouterContextProvider } from '$context';
+import { EmojiContextProvider } from '$context';
+import { Home } from '$pages';
 
 import './index.module.css';
 
@@ -12,6 +13,6 @@ if (!rootElement) {
 const root = createRoot(rootElement);
 root.render(
 	<EmojiContextProvider>
-		<RouterContextProvider />
+		<Home />
 	</EmojiContextProvider>,
 );
