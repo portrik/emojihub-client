@@ -1,0 +1,6 @@
+importOrder:
+  - ^\@(.[^/]*)$                  # Aliased packages. Any module starting with "@" and not containing any "/". For example, "@organisms"
+  - ^[./|../](.*)                 # Local imports. Any module starting with "./" or "../".
+
+importOrderSeparation: true       # Separates import groups with an empty line
+importOrderSortSpecifiers: true   # Sorts imports inside their specifiers
