@@ -1,6 +1,8 @@
+import { API } from './const';
+
 export async function request<Response>(path: string): Promise<Error | Response> {
 	try {
-		const response = await fetch(path);
+		const response = await fetch(`${API}/${path}`);
 		const content = await response.text();
 
 		if (!response.ok) {

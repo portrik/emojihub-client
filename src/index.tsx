@@ -1,5 +1,7 @@
 import { createRoot } from 'react-dom/client';
 
+import { EmojiContextProvider, RouterContextProvider } from '$context';
+
 import './index.module.css';
 
 const rootElement = document.querySelector('#root');
@@ -8,4 +10,8 @@ if (!rootElement) {
 }
 
 const root = createRoot(rootElement);
-root.render(<h1>Hello there!</h1>);
+root.render(
+	<EmojiContextProvider>
+		<RouterContextProvider />
+	</EmojiContextProvider>,
+);
