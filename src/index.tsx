@@ -1,5 +1,7 @@
 import { createRoot } from 'react-dom/client';
 
+import './index.module.css';
+
 const rootElement = document.querySelector('#root');
 if (!rootElement) {
 	throw new Error('Could not locate the root React element with id="root"!');

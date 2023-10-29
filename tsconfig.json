@@ -24,7 +24,12 @@
         "noFallthroughCasesInSwitch": true,
         "skipLibCheck": true,
         "resolveJsonModule": true,
-        "isolatedModules": false
+        "isolatedModules": false,
+        "paths": {
+            "$api": [
+                "./src/api/index.ts"
+            ]
+        }
     },
     "include": [
         "src",
