@@ -1,10 +1,12 @@
 import { type FC } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import { Home } from '$pages';
+
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <h1>Hello there!</h1>,
+		element: <Home />,
 	},
 ]);
 

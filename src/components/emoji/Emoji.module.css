@@ -1,0 +1,20 @@
+@import '../../styles/colors.css';
+
+.box {
+    width: 5rem;
+    height: 7rem;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-background-elevated);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

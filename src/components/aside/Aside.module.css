@@ -1,0 +1,13 @@
+@import '../../styles/colors.css';
+
+aside {
+    height: 100%;
+    padding: 1vw 1vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+
+    background-color: var(--color-background-elevated);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
