@@ -3,7 +3,7 @@ env:
   es2021: true
 
 plugins:
-  - react
+  - solid
   - "@typescript-eslint"
   - unicorn
   - sonarjs
@@ -11,7 +11,7 @@ plugins:
 
 extends:
   - eslint:recommended
-  - plugin:react/recommended
+  - plugin:solid/typescript
   - plugin:@typescript-eslint/recommended
   - plugin:@typescript-eslint/recommended-requiring-type-checking
   - plugin:@typescript-eslint/strict
@@ -29,10 +29,6 @@ parserOptions:
   project: ./tsconfig.json
   tsconfigRootDir: .
 
-settings:
-  react:
-    version: detect
-
 rules:
   indent:
     - error
@@ -49,9 +45,6 @@ rules:
   semi:
     - error
     - always
-
-  react/jsx-uses-react: off
-  react/react-in-jsx-scope: off
 
   sort-imports:
     - error

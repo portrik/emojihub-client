@@ -3,7 +3,7 @@ import url from 'node:url';
 
 import { defineConfig, type UserConfigExport } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
-import react from '@vitejs/plugin-react-swc';
+import solid from 'vite-plugin-solid';
 
 const directoryName = path.dirname(url.fileURLToPath(import.meta.url));
 
@@ -13,7 +13,7 @@ const configuration: UserConfigExport = {
 		emptyOutDir: true,
 	},
 
-	plugins: [tsConfigPaths(), react()],
+	plugins: [tsConfigPaths(), solid()],
 
 	server: {
 		port: 8080,
