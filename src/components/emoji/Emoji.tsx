@@ -8,16 +8,21 @@ import { useEmojiContext } from '$context';
 
 interface Properties {
   emoji: EmojiType;
+  disableSelection?: boolean
 }
 
-export const Emoji: FC<Properties> = ({ emoji }) => {
+export const Emoji: FC<Properties> = ({ emoji, disableSelection = false }) => {
 	const { addSelected, removeSelected } = useEmojiContext();
 
 	const onSelection = useCallback(() => {
+		if (disableSelection === true) {
+			return;
+		}
+
 		emoji.selected === undefined || !emoji.selected
 			? addSelected(emoji)
 			: removeSelected(emoji);
-	}, [emoji.selected]);
+	}, [emoji.selected, disableSelection]);
 
 	return (
 		<button className={`${styles.box} ${emoji.selected === true && styles.selected}`} onClick={onSelection} onKeyDown={onSelection}>

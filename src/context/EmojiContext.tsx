@@ -20,12 +20,14 @@ interface EmojiContext {
   available: Emoji[];
   selected: Emoji[];
   loading: boolean;
+  hideSelected: boolean;
 
   setCategory: (category?: EmojiCategory) => void;
   setGroup: (group?: string) => void;
   addSelected: (emoji: Emoji) => void;
   removeSelected: (emoji: Emoji) => void;
   clearSelected: () => void;
+  toggleHideSelected: () => void;
 
   selectedCategory?: EmojiCategory;
   selectedGroup?: string;
@@ -39,18 +41,21 @@ const Context = createContext<EmojiContext>({
 	available: [],
 	selected: [],
 	loading: false,
+	hideSelected: false,
 	setCategory: () => {},
 	setGroup: () => {},
 	addSelected: () => {},
 	removeSelected: () => {},
 	clearSelected: () => {},
+	toggleHideSelected: () => {},
 });
 
 export const EmojiContextProvider: FC<ProviderProperties> = ({ children }) => {
-	const [available, setAvailable] = useState<Emoji[]>([]);
+	const [loaded, setLoaded] = useState<Emoji[]>([]);
 	const [selectedCategory, setSelectedCategory] = useState<EmojiCategory>();
 	const [selectedGroup, setSelectedGroup] = useState<string>();
 	const [loading, setLoading] = useState(true);
+	const [hideSelected, setHideSelected] = useState(false);
 
 	useEffect(() => {
 		void load();
@@ -69,7 +74,9 @@ export const EmojiContextProvider: FC<ProviderProperties> = ({ children }) => {
 			emoji =
         selectedCategory === undefined
         	? await getGroup(selectedGroup)
-        	: emoji.filter((item) => item.group === selectedGroup);
+        	: emoji.filter(
+        		(item) => item.group === selectedGroup.replaceAll('-', ' '),
+        	);
 		}
 
 		if (selectedCategory === undefined && selectedGroup === undefined) {
@@ -77,7 +84,7 @@ export const EmojiContextProvider: FC<ProviderProperties> = ({ children }) => {
 		}
 
 		setLoading(false);
-		setAvailable(emoji);
+		setLoaded(emoji);
 	}, [selectedCategory, selectedGroup]);
 
 	const setCategory: EmojiContext['setCategory'] = useCallback((category) => {
@@ -91,7 +98,7 @@ export const EmojiContextProvider: FC<ProviderProperties> = ({ children }) => {
 	}, []);
 
 	const addSelected: EmojiContext['addSelected'] = useCallback((emoji) => {
-		setAvailable((previous) => {
+		setLoaded((previous) => {
 			const index = previous.findIndex((item) => item.name === emoji.name);
 			previous[index].selected = true;
 
@@ -101,7 +108,7 @@ export const EmojiContextProvider: FC<ProviderProperties> = ({ children }) => {
 
 	const removeSelected: EmojiContext['removeSelected'] = useCallback(
 		(emoji) => {
-			setAvailable((previous) => {
+			setLoaded((previous) => {
 				const index = previous.findIndex((item) => item.name === emoji.name);
 				previous[index].selected = false;
 
@@ -112,7 +119,7 @@ export const EmojiContextProvider: FC<ProviderProperties> = ({ children }) => {
 	);
 
 	const clearSelected: EmojiContext['clearSelected'] = useCallback(() => {
-		setAvailable((previous) => {
+		setLoaded((previous) => {
 			for (const emoji of previous) {
 				emoji.selected = false;
 			}
@@ -121,11 +128,19 @@ export const EmojiContextProvider: FC<ProviderProperties> = ({ children }) => {
 		});
 	}, []);
 
+	const toggleHideSelected: EmojiContext['toggleHideSelected'] =
+    useCallback(() => {
+    	setHideSelected((previous) => !previous);
+    }, []);
+
 	const value: EmojiContext = useMemo(
 		() => ({
-			available,
-			selected: available.filter((emoji) => emoji.selected),
+			available: loaded.filter(
+				(emoji) => !hideSelected || !(emoji.selected ?? false),
+			),
+			selected: loaded.filter((emoji) => emoji.selected),
 			loading,
+			hideSelected,
 			selectedCategory,
 			selectedGroup,
 			setCategory,
@@ -133,8 +148,9 @@ export const EmojiContextProvider: FC<ProviderProperties> = ({ children }) => {
 			addSelected,
 			removeSelected,
 			clearSelected,
+			toggleHideSelected,
 		}),
-		[available, loading, selectedCategory, selectedGroup],
+		[loaded, loading, hideSelected, selectedCategory, selectedGroup],
 	);
 
 	return <Context.Provider value={value}>{children}</Context.Provider>;

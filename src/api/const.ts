@@ -12,7 +12,6 @@ export const EmojiCategoriesWithGroups: Record<EmojiCategory, string[]> = {
 		'face-negative',
 		'face-neutral',
 		'face-positive',
-		'face-positive',
 		'face-role',
 		'face-sick',
 		'family',
