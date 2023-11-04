@@ -1,13 +1,17 @@
 @import '../../styles/colors.css';
+@import '../../styles/sizing.css';
 
 header {
     width: 100%;
-    padding: 1vw 1vh;
+    margin: calc(var(--sizing-padding) / 2) calc(var(--sizing-padding) / 4);
+    padding: var(--sizing-padding);
+
 
     display: flex;
     flex-direction: row;
     gap: 2vw;
 
     background-color: var(--color-background-elevated);
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
 }

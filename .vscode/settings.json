@@ -2,7 +2,8 @@
     "conventionalCommits.scopes": [
         "general",
         "api",
-        "context"
+        "context",
+        "style"
     ],
     "typescript.tsdk": "node_modules/typescript/lib"
 }

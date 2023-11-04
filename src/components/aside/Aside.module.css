@@ -1,13 +1,18 @@
-@import '../../styles/colors.css';
+@import "../../styles/colors.css";
+@import "../../styles/sizing.css";
+@import "../../styles/shadow.css";
 
 aside {
-    height: 100%;
-    padding: 1vw 1vh;
+  height: 90vh;
+  width: calc(5 * var(--sizing-padding));
+  margin: calc(var(--sizing-padding) / 2) calc(var(--sizing-padding) / 4);
+  padding: var(--sizing-padding);
 
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sizing-gap);
 
-    background-color: var(--color-background-elevated);
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  background-color: var(--color-background-elevated);
+  box-shadow: var(--shadow);
+  border-radius: 1rem;
 }
