@@ -1,4 +1,7 @@
 import { render } from 'solid-js/web';
+import '@fontsource-variable/jost';
+
+import './index.module.css';
 
 const rootElement = document.querySelector('#root');
 if (rootElement === null) {
