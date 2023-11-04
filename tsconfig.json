@@ -30,8 +30,8 @@
             "$api": [
                 "./src/api/index.ts"
             ],
-            "$context": [
-                "./src/context/index.ts"
+            "$store": [
+                "./src/store/index.ts"
             ],
             "$components/*": [
                 "./src/components/*"
