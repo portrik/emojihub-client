@@ -1,7 +1,8 @@
 import { type FC, type ReactNode } from 'react';
 
-import { Header } from '../header/Header';
-import { Aside } from '../aside/Aside';
+import { Aside } from '$components/aside/Aside';
+import { Header } from '$components/header/Header';
+
 import styles from './Layout.module.css';
 
 interface Properties {

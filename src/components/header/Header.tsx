@@ -15,6 +15,7 @@ import {
 } from '$api';
 import { useEmojiContext } from '$context';
 import { Modal } from '$components/modal/Modal';
+import { Button } from '$components/button/Button';
 
 import './Header.module.css';
 
@@ -26,7 +27,7 @@ export const Header: FC = () => {
 		selectedGroup,
 		setCategory,
 		setGroup,
-		addSelected
+		addSelected,
 	} = useEmojiContext();
 
 	const [random, setRandom] = useState<Emoji>();
@@ -82,7 +83,6 @@ export const Header: FC = () => {
 
 	return (
 		<header>
-			<label htmlFor="select-category">Category: </label>
 			<select
 				placeholder="Category"
 				id="select-category"
@@ -98,7 +98,6 @@ export const Header: FC = () => {
 				))}
 			</select>
 
-			<label htmlFor="select-group">Group: </label>
 			<select
 				placeholder="Category"
 				id="select-group"
@@ -121,9 +120,13 @@ export const Header: FC = () => {
 				onClick={toggleHideSelected}
 			/>
 
-			<button onClick={getRandom}>Get Random</button>
+			<Button onClick={getRandom}>Get Random</Button>
 
-			<Modal emoji={random} onClose={onCloseRandom} onSelection={onSelectRandom} />
+			<Modal
+				emoji={random}
+				onClose={onCloseRandom}
+				onSelection={onSelectRandom}
+			/>
 		</header>
 	);
 };

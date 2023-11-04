@@ -2,8 +2,9 @@ import { type FC, useEffect, useRef } from 'react';
 
 import { type Emoji as EmojiType } from '$api';
 import { Emoji } from '$components/emoji/Emoji';
+import { Button } from '$components/button/Button';
 
-import './Modal.module.css';
+import styles from './Modal.module.css';
 
 interface Properties {
   emoji?: EmojiType;
@@ -27,13 +28,11 @@ export const Modal: FC<Properties> = ({ emoji, onClose, onSelection }) => {
 			<dialog ref={dialogReference}>
 				<Emoji emoji={emoji} disableSelection={true} />
 
-				<button onClick={onSelection}>
-                    Add to Selection
-				</button>
+				<div className={styles.buttons}>
+					<Button onClick={onSelection}>Add to Selection</Button>
 
-				<button onClick={onClose}>
-                    Close
-				</button>
+					<Button onClick={onClose}>Close</Button>
+				</div>
 			</dialog>
 		)
 	);

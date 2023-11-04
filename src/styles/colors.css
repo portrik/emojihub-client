@@ -5,6 +5,7 @@
 
     --color-foreground: #0c0a09;
 
-    --color-main: #fbbf24;
-    --color-secondary: #4ade80;
+    --color-main: #c2410c;
+    --color-main-hover: #9a3412;
+    --color-main-text: #ffffff;
 }

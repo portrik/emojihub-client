@@ -24,7 +24,7 @@
     box-shadow: var(--shadow-hover);
 }
 
-.box > .tick {
+.box>.tick {
     display: none;
     position: relative;
     top: 1rem;
@@ -32,7 +32,7 @@
     transition: 0.25s ease-in-out;
 }
 
-.box.selected > .tick {
+.box.selected>.tick {
     display: inherit;
     content: "✔";
 }

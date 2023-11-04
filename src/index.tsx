@@ -1,11 +1,12 @@
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+
 import '@fontsource-variable/jost';
 
 import { EmojiContextProvider } from '$context';
 import { Home } from '$pages';
 
 import './index.module.css';
-import { StrictMode } from 'react';
 
 const rootElement = document.querySelector('#root');
 if (!rootElement) {

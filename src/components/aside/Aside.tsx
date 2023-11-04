@@ -1,9 +1,10 @@
 import { type FC, useCallback } from 'react';
 
+import { Button } from '$components/button/Button';
 import { useEmojiContext } from '$context';
 import { unicodeToString } from '$utils';
 
-import './Aside.module.css';
+import styles from './Aside.module.css';
 
 export const Aside: FC = () => {
 	const { selected, clearSelected } = useEmojiContext();
@@ -35,23 +36,30 @@ export const Aside: FC = () => {
 
 	return (
 		<aside>
-			<h2>
-        Selected
+			<span className={styles.head}>
+				<h2>Selected</h2>
+
 				{selected.length > 0 && (
-					<button onClick={clearSelected}>Clear Selection</button>
+					<Button onClick={clearSelected}>Clear Selection</Button>
 				)}
-			</h2>
+			</span>
 
-			{selected.length === 0 && 'Nothing yet'}
+			<div className={styles.list}>
+				{selected.length === 0 && <h4>Nothing yet</h4>}
 
-			{selected.map((emoji) => (
-				<span key={emoji.name}>{unicodeToString(emoji.unicode)}</span>
-			))}
+				{selected.map((emoji) => (
+					<span key={emoji.name}>{unicodeToString(emoji.unicode)}</span>
+				))}
+			</div>
 
-			<div>
-				<button onClick={copyToClipboard}>Copy Selection to Clipboard</button>
+			<div className={styles.buttons}>
+				<Button onClick={copyToClipboard} disabled={selected.length === 0}>
+          Copy Selection to Clipboard
+				</Button>
 
-				<button onClick={saveToJSON}>Save as JSON</button>
+				<Button onClick={saveToJSON} disabled={selected.length === 0}>
+          Save as JSON
+				</Button>
 			</div>
 		</aside>
 	);
