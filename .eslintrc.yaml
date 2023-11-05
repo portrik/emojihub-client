@@ -3,7 +3,7 @@ env:
   es2021: true
 
 plugins:
-  - solid
+  - svelte
   - "@typescript-eslint"
   - unicorn
   - sonarjs
@@ -11,7 +11,8 @@ plugins:
 
 extends:
   - eslint:recommended
-  - plugin:solid/typescript
+  - plugin:svelte/recommended
+  - plugin:svelte/prettier
   - plugin:@typescript-eslint/recommended
   - plugin:@typescript-eslint/recommended-requiring-type-checking
   - plugin:@typescript-eslint/strict
@@ -19,7 +20,11 @@ extends:
   - plugin:sonarjs/recommended
   - plugin:jsx-a11y/recommended
 
-overrides: []
+overrides:
+  - files: '*.svelte'
+    parser: 'svelte-eslint-parser'
+    parserOptions:
+      parser: '@typescript-eslint/parser'
 
 parser: "@typescript-eslint/parser"
 
@@ -28,6 +33,8 @@ parserOptions:
   sourceType: module
   project: ./tsconfig.json
   tsconfigRootDir: .
+  extraFileExtensions:
+    - ".svelte"
 
 rules:
   indent:

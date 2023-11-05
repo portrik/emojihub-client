@@ -3,7 +3,7 @@ import url from 'node:url';
 
 import { defineConfig, type UserConfigExport } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
-import solid from 'vite-plugin-solid';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 const directoryName = path.dirname(url.fileURLToPath(import.meta.url));
 
@@ -13,7 +13,7 @@ const configuration: UserConfigExport = {
 		emptyOutDir: true,
 	},
 
-	plugins: [tsConfigPaths(), solid()],
+	plugins: [tsConfigPaths(), svelte()],
 
 	server: {
 		port: 8080,
