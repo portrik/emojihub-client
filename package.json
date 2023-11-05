@@ -4,7 +4,7 @@
     "description": "Client for the EmojiHub API.",
     "scripts": {
         "build": "rimraf public && pnpm run deck",
-        "deck": "marp --no-stdin PITCHME.md -o public/index.html && ncp assets public/assets",
+        "deck": "marp --no-stdin PITCHME.md -o public/index.html --html && ncp assets public/assets",
         "start": "marp -ps ."
     },
     "devDependencies": {
