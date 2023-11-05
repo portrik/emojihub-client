@@ -22,7 +22,6 @@ export enum EmojiCategory {
     group: string;
     htmlCode: string[];
     unicode: string[];
-    selected?: boolean;
   }
 
 export type { Emoji };

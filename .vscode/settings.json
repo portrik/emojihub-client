@@ -3,7 +3,8 @@
         "general",
         "api",
         "context",
-        "style"
+        "style",
+        "store"
     ],
     "typescript.tsdk": "node_modules/typescript/lib"
 }
