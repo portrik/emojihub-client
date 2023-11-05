@@ -1,9 +1,9 @@
 import path from 'node:path';
 import url from 'node:url';
 
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig, type UserConfigExport } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
-import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 const directoryName = path.dirname(url.fileURLToPath(import.meta.url));
 
@@ -13,7 +13,7 @@ const configuration: UserConfigExport = {
 		emptyOutDir: true,
 	},
 
-	plugins: [tsConfigPaths(), svelte()],
+	plugins: [svelte(), tsConfigPaths()],
 
 	server: {
 		port: 8080,

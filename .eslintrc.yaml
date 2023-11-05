@@ -3,22 +3,23 @@ env:
   es2021: true
 
 plugins:
-  - svelte
+  - prettier
   - "@typescript-eslint"
   - unicorn
   - sonarjs
   - jsx-a11y
+  - svelte
 
 extends:
   - eslint:recommended
-  - plugin:svelte/recommended
-  - plugin:svelte/prettier
   - plugin:@typescript-eslint/recommended
   - plugin:@typescript-eslint/recommended-requiring-type-checking
   - plugin:@typescript-eslint/strict
   - plugin:unicorn/recommended
   - plugin:sonarjs/recommended
   - plugin:jsx-a11y/recommended
+  - plugin:svelte/recommended
+  - plugin:svelte/prettier
 
 overrides:
   - files: '*.svelte'
@@ -98,4 +99,4 @@ rules:
   unicorn/no-array-method-this-argument: warn
   unicorn/prefer-ternary: warn
 
-  no-mixed-spaces-and-tabs: warn
+  no-mixed-spaces-and-tabs: off

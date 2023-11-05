@@ -4,9 +4,9 @@ import { type Emoji, type EmojiCategory } from '$api';
 
 import { load } from './actions/load';
 
-export const selectedCategory = writable<EmojiCategory>();
+export const selectedCategory = writable<EmojiCategory | undefined>();
 
-export const selectedGroup = writable<string>();
+export const selectedGroup = writable<string | undefined>();
 
 export const hideSelectedInternal = writable<boolean>(false);
 

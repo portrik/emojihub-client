@@ -7,13 +7,10 @@ export function addSelected(emoji: Emoji): void {
 }
 
 export function removeSelected(emoji: Emoji): void {
-	selected.update((previous) => {
-		const index = previous.findIndex((item) => item.name === emoji.name);
-
-		return previous.splice(index, 1);
-	});
+	selected.update((previous) => previous.filter((item) => item.name !== emoji.name));
 }
 
 export function clearSelected(): void {
+	console.log('NOW');
 	selected.set([]);
 }
