@@ -4,8 +4,8 @@
     "description": "Client for the EmojiHub API.",
     "scripts": {
         "build": "rimraf public && pnpm run deck",
-        "deck": "marp --no-stdin PITCHME.md -o public/index.html --html && ncp assets public/assets",
-        "start": "marp -ps ."
+        "deck": "marp --no-stdin PITCHME.md --theme cookielab.css -o public/index.html --html && ncp assets public/assets",
+        "start": "marp -ps . --html --theme cookielab.css "
     },
     "devDependencies": {
         "@marp-team/marp-cli": "^3.4.0",
