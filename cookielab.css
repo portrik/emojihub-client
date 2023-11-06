@@ -1,0 +1,31 @@
+@import 'default';
+
+:root {
+    --color-background: #FFFFFF;
+    --color-text: #1E1E1E;
+    --color-main: #FFCD68;
+}
+
+section {
+    background-color: var(--color-background);
+    color: var(--color-text) !important;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.withFade {
+    color: grey;
+}
+
+.selected {
+    color: black;
+}
+
+h1 {
+    color: var(--color-text);
+}
+

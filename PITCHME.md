@@ -1,38 +1,38 @@
 ---
 marp: true
 title: EmojiHub
-theme: uncover
+theme: cookielab
 transition: fade
 paginate: false
-style: |
-    .columns {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-    }
-
-    .withFade {
-        color: grey;
-    }
-
-    .selected {
-        color: black;
-    }
 ---
 
+<style scoped>
+section {
+  background: var(--color-main);
+}
+</style>
+
 # React vs Solid vs Svelte
+
+![bg right fit](https://media.tenor.com/PwFNvM2V9BgAAAAC/hype-pepe-pepe.gif)
 
 ---
 
 # Hypothesis
 
+![bg right fit](https://www.streamscheme.com/wp-content/uploads/2020/09/monkahmm-emote.png)
+
 ---
 
 # React is bad
 
+![bg right fit](https://cdn.7tv.app/emote/6487883dd13f0e678cdcf53e/4x.webp)
+
 ---
 
 # What else can we use?
+
+![bg right fit](https://i.kym-cdn.com/photos/images/newsfeed/002/139/744/c27.png)
 
 ---
 
@@ -42,6 +42,8 @@ style: |
 
 # ~~Plain HTML and CSS~~
 
+![bg right fit](https://emoji.discadia.com/emojis/49ba1959-7a33-4ac0-82d3-94d43816a45b.png)
+
 ---
 
 ![bg fit](assets/UsageTrends.png)
@@ -49,6 +51,8 @@ style: |
 ---
 
 # SolidJS
+
+![bg right fit](https://yt3.googleusercontent.com/B8OVfruPK5Zls5beHf_7a-kQ0Lo57DcoHxb-tp0skMeAGVZMM1EqMsFA0wyEl91N10z2Bc19X1w=s900-c-k-c0x00ffffff-no-rj)
 
 ---
 
@@ -61,6 +65,8 @@ style: |
 3. Control Flow Components
 4. Stores
 5. Compilation
+
+![bg right fit](https://ih1.redbubble.net/image.1754844361.6620/st,small,507x507-pad,600x600,f8f8f8.u1.jpg)
 
 ---
 
@@ -186,6 +192,8 @@ export const Modal: Component<Properties> = (properties) => {
 
 # Svelte
 
+![bg right fit](https://www.sveltejs.cz/images/svelte-logo-main-page-image.png)
+
 ---
 
 ![bg contain](https://media.tenor.com/EJbGrG_eBsYAAAAC/pulp-fiction-briefcase.gif)
@@ -197,6 +205,8 @@ export const Modal: Component<Properties> = (properties) => {
 3. Logic Blocks
 4. Stores
 5. Compilation
+
+![bg right fit](https://media.tenor.com/tthMwilLM8UAAAAC/pepe-meme.gif)
 
 ---
 
@@ -316,10 +326,22 @@ export const Modal: Component<Properties> = (properties) => {
 
 # Conclusion
 
+![bg right fit](https://media.tenor.com/-eMjFc19XVkAAAAC/hmm-note.gif)
+
 ---
 
 # It's Fun to Experiment
 
+![bg right fit](https://i.kym-cdn.com/photos/images/original/001/507/457/33e.jpg)
+
 ---
 
 # Svelte Is Really Good
+
+![bg right fit](https://ih1.redbubble.net/image.1100422506.3747/flat,750x1000,075,f.u1.jpg)
+
+---
+
+# Questions?
+
+![bg right fit](https://i.kym-cdn.com/photos/images/newsfeed/002/604/112/929.png)
